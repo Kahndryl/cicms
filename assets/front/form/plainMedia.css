@@ -1,0 +1,13 @@
+
+/* $Id: $ */
+@charset "UTF-8";
+/* CSS Document */
+
+
+@media only screen and (min-width:1024px) {
+	.backgroundSecBg{ padding:30px 10px;}
+	.tempFrmWrapper {
+	padding:10px 25px;
+}
+
+/* Ipad Start */

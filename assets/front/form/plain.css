@@ -1,0 +1,167 @@
+/* $Id: $ */
+@charset "UTF-8";
+/* CSS Document */
+
+/*defaultTheme starts here*/
+
+.backgroundBg {
+	background:none;
+}
+.backgroundSecBg{ 
+	padding:5px; 
+	margin:0;
+	}	
+.templateWidth {
+	margin:0 auto;
+}
+.topContainer {
+	display:none;
+}
+.btmContainer {
+	display:none;
+}
+.centerContainer {
+}
+.templateWrapper {
+	background:#fff;
+}
+.tempHeadBdr {
+}
+.tempHeadContBdr {
+	background: #f1f1f1;
+	border-bottom:1px solid #EAEAEA;
+	margin: 0;
+	padding:10px 25px;
+
+}
+.tempHeadContBdr .frmTitle {
+	color: #444;
+	margin: 0;
+	padding: 0;
+	font-size:2em;
+}
+.tempHeadContBdr .frmDesc {
+	color: #444;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+.tempFrmWrapper .labelName {
+	font-weight:bold;
+	font-size:13px;
+	color:#444;
+}
+.tempContDiv input[type="text"], .tempContDiv textarea {
+	background:#fff;	
+	border:1px solid #e5e5e5;	
+	-webkit-border-radius:2px; 	
+	-moz-border-radius:2px;	
+	border-radius:2px;	
+	padding:5px;
+	font-size:13px;	
+}
+
+.tempContDiv input[type="text"]:hover,  .tempContDiv textarea:hover{	
+	border:1px solid rgba(157, 157, 157, 0.75) !important;	
+	}	
+.tempContDiv input[type="text"]:focus, .tempContDiv textarea:focus{	
+	border:1px solid rgba(121, 187, 238, 0.75) !important;	
+	-webkit-box-shadow:0 0 5px rgba(82, 168, 236, 0.5) !important;	
+	-moz-box-shadow:0 0 5px rgba(82, 168, 236, 0.5) !important;	
+	box-shadow:0 0 5px rgba(82, 168, 236, 0.5) !important;	
+	}
+
+.subContWrap {
+	margin:10px;
+	margin-bottom:0;
+}
+.phone .tempContDiv label, .date .tempContDiv label, .time .tempContDiv label, .address .tempContDiv label, .name .tempContDiv span label {
+	color:#888888;
+}
+
+.date .tempContDiv .calendarIcon{ margin-top:5px;}
+
+
+.fmFooter {
+	text-align:center;
+	margin:0 10px 10px 10px;
+	overflow:hidden;
+}
+
+.fmSmtButton {
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	padding:5px 15px;
+	font-weight:400;
+	-webkit-border-radius:2px; 
+	-moz-border-radius:2px;
+	border-radius:2px;
+	font:13px 'Open Sans',"Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+	}
+	
+.submitColor{
+	color: #fff;
+	border:1px solid;
+	border-color: #2F9EEC #1988D6 #1988D6;
+	background: #2596e6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6));
+	background: -moz-linear-gradient(top,  #2f9eec,  #1988d6);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6');
+	-moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15);
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.15);
+	text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);
+	}
+	
+.submitColor:hover{
+	background: #1988d6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6));
+	background: -moz-linear-gradient(top,  #1988d6,  #1988d6);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6');
+	}
+
+.cancelColor {
+	color: #444;
+	border: solid 1px #ccc;
+	background: #eaeaea;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F4F4F4));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #F4F4F4);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#F4F4F4');
+	-moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow:0 2px #fff inset;
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1);
+	text-shadow:0px 2px 0px #fff;
+	}
+	
+.cancelColor:hover{
+	border: 1px solid #aaa;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F4F4F4));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #F4F4F4);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#F4F4F4');
+	}
+	
+.brandingContainer {
+		text-align: right;
+		color:#666;
+		border-top:1px solid #ccc;
+		background:#fff;
+		margin-top:10px;
+		padding:15px;
+		}
+		
+	
+.form_sBox{ -webkit-border-radius:2px; 
+	-moz-border-radius:2px;
+	border-radius:2px; height:26px;}
+	
+.form_sBox .customArrow{right:3px;top:4px;}
+
+.form_sBox select{ padding-top:2px; padding-bottom:4px; padding-right:25px;}	
+
+/* IE6, IE7, IE8, but also IE9 */
+
+.form_sBox select{ padding:2px 3px 4px 3px\9;}
+.time .form_sBox select{ padding:2px 18px 4px 3px\9;}	

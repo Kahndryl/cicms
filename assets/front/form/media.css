@@ -1,0 +1,89 @@
+/* $Id: $ */
+@charset "UTF-8";
+/* CSS Document */
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+@-webkit-viewport {
+width:device-width
+}
+@-moz-viewport {
+width:device-width
+}
+@-ms-viewport {
+width:device-width
+}
+@-o-viewport {
+width:device-width
+}
+
+/* Ipad (Live Themes) Start */
+
+@media only screen and (min-width:1024px) {
+	
+body{
+	min-width:800px;
+	}
+	
+.topContainer{
+	background-size:contain;
+	background-position: center bottom;
+	}
+	
+.btmContainer{
+	background-size:contain;
+	background-position: center top;
+	}
+	
+.tempHeadBdr{
+	background-size:contain;
+	}
+	
+}
+
+
+
+@media only screen and (max-width:768px) {
+
+.templateWidth{
+	width:100%;
+	margin-right:0; margin-left:0;
+	}
+	
+.topContainer{
+	background-size:contain;
+	background-position: center bottom;
+	}
+	
+.btmContainer{
+	background-size:contain;
+	background-position: center top;
+	}
+	
+.tempHeadBdr{
+	background-size:contain;
+	}
+	
+.pmnt .cardOuterWrapper{ width:99%;}
+
+.verification .captchaOuterWrapper{ width:auto;}
+
+
+.address .tempContDiv span, .geolocation .tempContDiv span{ margin-right:0;}
+
+
+.address .tempContDiv span.addtwo, .geolocation .tempContDiv span.addtwo{ 
+	width:100%;
+	}
+		
+.leftAlign .address .tempContDiv span.addtwo, .geolocation .tempContDiv span.addtwo{ 
+	width:100%;
+	}	
+.rightAlign .address .tempContDiv span.addtwo, .geolocation .tempContDiv span.addtwo{ 
+	width:100%;
+	}	
+	
+	
+}
+
+
+

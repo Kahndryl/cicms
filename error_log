@@ -1,0 +1,8 @@
+[16-Feb-2016 00:42:58 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home2/phakamon/public_html/app/application/modules/bonus/views/index.php on line 36
+[16-Feb-2016 07:03:09 America/Chicago] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ';' in /home2/phakamon/public_html/app/application/modules/users/views/bank_detail.php on line 32
+[22-Feb-2016 06:33:09 America/Chicago] PHP Fatal error:  Call to undefined function get_loged_user_id() in /home2/phakamon/public_html/app/application/modules/offers/models/Offers_model.php on line 119
+[22-Feb-2016 06:33:19 America/Chicago] PHP Fatal error:  Call to undefined function get_loged_user_id() in /home2/phakamon/public_html/app/application/modules/offers/models/Offers_model.php on line 119
+[22-Feb-2016 06:33:36 America/Chicago] PHP Fatal error:  Call to undefined function get_loged_user_id() in /home2/phakamon/public_html/app/application/modules/offers/models/Offers_model.php on line 119
+[22-Feb-2016 06:34:06 America/Chicago] PHP Fatal error:  Call to undefined function get_loged_user_id() in /home2/phakamon/public_html/app/application/modules/offers/models/Offers_model.php on line 119
+[12-Mar-2016 06:34:29 America/Chicago] PHP Fatal error:  Call to undefined function is_user_login() in /home2/phakamon/public_html/app/application/modules/offers/controllers/User.php on line 16
+[14-Mar-2016 08:49:04 America/Chicago] PHP Fatal error:  Call to undefined function get_offer_value() in /home2/phakamon/public_html/app/application/modules/offers/controllers/User.php on line 168
