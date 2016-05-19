@@ -44,19 +44,11 @@ class gallery_model extends CI_Model{
 		return $this->db->count_all($this->table_gallery);
 	 }
 	
-	 
-	public function set_gallery($id = NULL){
-		$data = array(
-			'gallery_title' => $this->input->post('gallery_title'),
-'slug' => url_title($this->input->post('gallery_title'), 'dash', true),
-'short_content' => $this->input->post('short_content'),
-'content' => $this->input->post('content'),
-'meta_keyword' => $this->input->post('meta_keyword'),
-'meta_description' => $this->input->post('meta_description'),
-'status' => $this->input->post('status'),
-'updated_on' => date('Y-m-d H:i:s'),
+	 public function get_byname($filename = "rand"){
+			return $this->db->query("SELECT * FROM media WHERE path LIKE '%".$filename."%'")->result();
+	}
+	public function set_gallery($id = NULL,$data=array()){
 
-		);
 		if($id == NULL){
 			$data['created_on'] = date('Y-m-d H:i:s');
 			// need to create entery

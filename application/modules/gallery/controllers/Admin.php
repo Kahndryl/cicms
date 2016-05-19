@@ -64,7 +64,94 @@ $this->form_validation->set_rules('status', 'Status', 'required');
 		$data['view'] = 'gallery/admin/view';
 		$this->load->view('backend/layout', $data);
 	}
+	public function gallery($page = 0){
+		$data['total_rows'] = $this->gallery_model->get_row_count();
+		$data['per_page'] = 5;
+		$data['current_page'] = $page;
+	
+		$data['title'] = 'Media Galleries';
+		$data['gallerys'] = $this->gallery_model->get_gallery(NULL,$page,$data['per_page']);
+
+		$this->load->view('gallery', $data);
+	}
+	public function removeFile(){
+		if(isset($_POST['file'])){
+			$images = $this->gallery_model->get_byname($this->input->post('file'));
+			foreach($images as $image){
+				 unlink($image->path);
+				 $this->gallery_model->remove_gallery($image->id);
+			}
+		}
+	}
+	public function upload(){
 		
+		
+		$upload_path = 'assets/upload/';
+		$output = array();
+		if(isset($_FILES['files']) AND !empty($_FILES['files'])){
+			$file_len = count($_FILES['files']['tmp_name']);
+			$output['files'] = array();
+			$output['metas'] = array();
+			$output['filelen'] = $file_len;
+			for($i=0;$i<$file_len;$i++){
+				$imageFileType = pathinfo(basename($_FILES["files"]["name"][$i]),PATHINFO_EXTENSION);
+				$temp_name = $_FILES['files']['tmp_name'][$i];
+				 $check = getimagesize($_FILES["files"]["tmp_name"][$i]);
+				if($check !== false) {
+					if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+						$output['error'] = "$imageFileType extension is not allowed";	
+					}else{
+						$filepath = $upload_path.time().rand(383,939393933).".".$imageFileType;
+						if(move_uploaded_file($_FILES["files"]["tmp_name"][$i], $filepath)){
+							$data = array(
+								'path' => $filepath
+							);
+							$data['file_name'] = "";
+							$data['description'] = "";
+							$this->gallery_model->set_gallery(NULL,$data);
+							$output['files'][] = $filepath;
+							$output['metas'][] = array(
+								'date' => date(DATE_RFC2822),
+								"extension" => $imageFileType,
+								"file"=> $filepath,
+								"name"=> basename($_FILES["files"]["name"][$i]),
+								"old_name"=> basename($_FILES["files"]["name"][$i]),
+								"replaced"=> false,
+								"size"=> $check,
+								"size2"=> "53.06 KB",
+								"type"=> array(
+									"image",
+									"jpeg"
+								)
+							);
+						}else{
+							$output['metas'][] = array(
+								'date' => date(DATE_RFC2822),
+								"extension" => $imageFileType,
+								"file"=> $filepath,
+								"name"=> basename($_FILES["files"]["name"][$i]),
+								"old_name"=> basename($_FILES["files"]["name"][$i]),
+								"replaced"=> false,
+								"size"=> $check,
+								"size2"=> "53.06 KB",
+								"type"=> array(
+									"image",
+									"jpeg"
+								)
+							);
+							$output['error'] ="error uploading file";
+						}
+						
+					}
+				}else{
+					$output['error'] = "$check file is not image";
+				} 
+			}
+		}else{
+			$output['error'] ="No file received";
+		}
+		echo json_encode($output);
+	}
 	public function edit($id= NULL,$status = NULL){
 		if($status == 1){
 			$data['message'] = 'page updated';
